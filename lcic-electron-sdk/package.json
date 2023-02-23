@@ -1,0 +1,93 @@
+{
+  "name": "lcic-electron-demo",
+  "version": "1.0.0",
+  "description": "tencent lcic electron sdk demo",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron --debug main.js",
+    "builder-win": "electron-builder --win",
+    "builder-mac": "electron-builder --mac"
+  },
+  "author": "teenhe",
+  "license": "BSD",
+  "build": {
+    "appId": "com.tencent.lcic-demo",
+    "copyright": "tencent",
+    "productName": "腾讯低代码互动课堂LCIC",
+    "releaseInfo": {
+      "releaseNotes": "更新说明"
+    },
+    "asar": false,
+    "icon": "img/crdc.ico",
+    "protocols": [
+      {
+        "name": "TCIC",
+        "schemes": [
+          "tcic"
+        ]
+      }
+    ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://res.qcloudclass.com/Desktop/1.2.0/"
+      }
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true,
+      "artifactName": "${productName}_${version}_Setup.${ext}",
+      "installerIcon": "img/crdc.ico",
+      "uninstallerIcon": "img/crdc.ico",
+      "include": "installer.nsh",
+      "runAfterFinish": false,
+      "perMachine": true
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "signingHashAlgorithms": [
+        "sha1"
+      ],
+      "sign": "./sign.js",
+      "signAndEditExecutable": true,
+      "signDlls": false
+    },
+    "mac": {
+      "icon": "img/crdc.ico.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "entitlements": "entitlements.mac.plist",
+      "hardenedRuntime": true,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "请允许本程序访问您的麦克风",
+        "NSCameraUsageDescription": "请允许本程序访问您的摄像头"
+      }
+    }
+  },
+  "devDependencies": {
+    "cos-nodejs-sdk-v5": "2.6.2",
+    "electron": "^10.4.7",
+    "electron-builder": "22.10.5",
+    "electron-notarize": "^1.0.0",
+    "extract-zip": "2.0.1",
+    "jose": "1.28.0",
+    "native-ext-loader": "^2.3.0",
+    "request": "2.88.2"
+  },
+  "dependencies": {
+    "@sentry/electron": "0.17.1",
+    "axios": "0.21.1",
+    "electron-log": "4.3.0",
+    "electron-updater": "4.3.4",
+    "node-machine-id": "1.1.12",
+    "tcic-electron-sdk": "^1.7.2396"
+  }
+}

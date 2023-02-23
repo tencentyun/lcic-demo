@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>低代码互动课堂客户端</title>
+    <style>
+      body {
+        background: #34363b;
+      }
+      .contain {
+        width: 100%;
+        height: 100%;
+        max-width: 480px;
+        position: relative;
+        margin: 10px auto;
+      }
+
+      ::placeholder {
+        font-size: 14px;
+      }
+
+      .demo-main {
+        opacity: 1;
+        color: rgba(255, 255, 255, 1);
+        font-size: 17px;
+        font-weight: 700;
+        font-family: 'SF Pro';
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .demo-title {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 22px;
+        text-align: center;
+        margin-top: 90px;
+        color: #fff;
+      }
+
+      .login-dialog {
+        display: none;
+      }
+
+      .demo-class-id {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 31px;
+        padding: 10px;
+        margin-left: 7%;
+        margin-right: 7%;
+      }
+
+      .demo-class {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+      }
+
+      .demo-icon {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #fff;
+        opacity: 0.4;
+      }
+
+      .demo-input {
+        width: 100%;
+        background: none;
+        outline: none;
+        border: 0px;
+        color: #fff;
+        min-width: 200px;
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .dialog-button-item {
+        margin-top: 51px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 174px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      .demo-agreement {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 274px;
+      }
+
+      .dialog-button {
+        width: 100%;
+        padding: 0.75rem 0.75rem;
+        border-radius: 0.25rem;
+        letter-spacing: 0.0625rem;
+        background-color: #2971ff;
+        cursor: pointer;
+        font-size: 1rem;
+        user-select: none;
+        text-align: center;
+      }
+
+      .dialog-button1 {
+        width: 100%;
+        padding: 0.75rem 0.75rem;
+        border-radius: 0.25rem;
+        letter-spacing: 0.0625rem;
+        background: rgba(38, 111, 232, 0.2);
+        cursor: pointer;
+        font-size: 1rem;
+        user-select: none;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4);
+        opacity: 1;
+      }
+
+      .demo-switch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #bbd3fb;
+      }
+
+      .demo-icon {
+        width: 70px;
+      }
+
+      .sdk-version {
+        margin-top: 20px;
+        color: #fff;
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.4;
+      }
+
+      .select {
+        width: 100%;
+      }
+
+      .select .el-input.el-input--suffix {
+        width: 100%;
+      }
+
+      .dialog-button:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      .dialog-button:hover {
+        background-color: #2f7fff;
+      }
+
+      .active1 {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+
+      .demo {
+        border-bottom: 1px solid #266fe8;
+      }
+
+      .top {
+        color: #000;
+      }
+
+      .el-radio__inner {
+        background: rgba(255, 255, 255, 0.03);
+        border: 0.125rem solid rgba(255, 255, 255, 0.4);
+      }
+
+      .el-checkbox__inner {
+        background: rgba(255, 255, 255, 0.03);
+        border: 0.125rem solid rgba(255, 255, 255, 0.4);
+      }
+
+      .el-input__inner {
+        background: none;
+        color: #fff;
+        opacity: 0.8;
+        border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+      }
+
+      .el-select-dropdown__list {
+        background: #151515;
+        border-radius: 0.375rem;
+      }
+
+      li.el-select-dropdown__item.hover,
+      li.el-select-dropdown__item:hover {
+        background: #355699;
+        color: #fff;
+      }
+
+      .el-popper .popper__arrow {
+        display: none;
+      }
+
+      .el-select-dropdown__item {
+        color: #fff;
+      }
+
+      .el-select-dropdown {
+        background-color: #000;
+        background: #151515;
+        border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0rem 0.375rem 1.875rem 0.3125rem rgba(0, 0, 0, 0.05),
+          0rem 1rem 1.5rem 0.125rem rgba(0, 0, 0, 0.04),
+          0rem 0.5rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.08);
+        border-radius: 0.375rem;
+      }
+
+      .el-radio__input.is-checked .el-radio__inner {
+        border: 0.0625rem solid #266fe8;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .el-radio__inner::after {
+        background: #266fe8;
+        width: 0.625rem;
+        height: 0.625rem;
+      }
+
+      .el-radio__label {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      .el-checkbox__label {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      .el-checkbox__input.is-checked .el-checkbox__inner {
+        background: #266fe8;
+        border-color: #266fe8;
+      }
+
+      .el-radio__input.is-checked + .el-radio__label {
+        color: #fff;
+      }
+
+      .el-checkbox__input.is-checked + .el-checkbox__label {
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contain">
+      <div class="demo-main">低代码互动课堂Demo</div>
+      <div class="demo-title">用户登录</div>
+      <div class="demo-class-id">
+        <div class="demo-icon">应用id *</div>
+        <input
+          placeholder="请输入sdkAppId 或 schoolId"
+          maxlength="9"
+          type="number"
+          pattern="[0-9]*"
+          class="class-idInput demo-input"
+        />
+      </div>
+      <div class="demo-class-id">
+        <div class="demo-icon">课堂ID *</div>
+        <input
+          placeholder="请输入课堂ID"
+          maxlength="9"
+          type="number"
+          pattern="[0-9]*"
+          class="class-idInput demo-input"
+        />
+      </div>
+      <div class="demo-class-id">
+        <div class="demo-icon">用户id *</div>
+        <input placeholder="用户ID" maxlength="32" class="demo-input" />
+      </div>
+      <div class="demo-class-id">
+        <div class="demo-icon">token *</div>
+        <input placeholder="用户鉴权token" class="demo-input" />
+      </div>
+
+      <div class="demo-class-id">
+        <div class="demo-icon">昵称</div>
+        <input
+          placeholder="用户名 &amp; 昵称（选填）"
+          maxlength="30"
+          class="demo-input"
+        />
+      </div>
+      <div class="dialog-button-item">
+        <div class="dialog-button" onclick="enterClass">进入课堂</div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const classinfo = {
+        classId: '',  // 课堂id 来源查看：https://cloud.tencent.com/document/product/1639/80942
+        schoolid:  '', // 腾讯云控制台注册或购买的应用SDKAppID ，获取方式 https://cloud.tencent.com/document/product/1639/79912
+      };
+      // info 为进入课堂所需参数
+      function joinClass(info, sign) {
+        // 当用户通过pc-electron应用内链接，或者通过浏览器中的私有协议拉起客户端
+        if (typeof window.joinClassBySign === 'function') {
+          // 桌面端中注册是的全局方法 [见preload.js]
+          window.joinClassBySign({
+            schoolid: this.schoolid,
+            classid: this.idInputs.classId,
+            userid: sign.UserId,
+            token: sign.Token,
+            lng: this.lngRadio,
+          });
+        } else if ( window.MobileNative && typeof window.MobileNative.joinClassBySign === 'function') {
+          // Android端/ IOS 端适配。 通过app 内注册的全局变量信息，从而唤起app应用来打开课堂页面
+          window.MobileNative.joinClass(
+            JSON.stringify({
+              schoolid: this.schoolid,
+              classid: this.idInputs.classId,
+              userid: sign.UserId,
+              token: sign.Token,
+              lng: this.lngRadio,
+            }),
+          );
+        } else { // web、h5 通过页面链接的方式进入课堂，每个
+          const matches = location.pathname.match(/[0-9]+(.[0-9])+/);
+          const currentUrl = window.location.href; // 当前最新的版本为 1.7.2
+          const prefixUrl = currentUrl.substring(
+            0,
+            currentUrl.lastIndexOf('/'),
+          );
+          const language = this.lngRadio === 'en' ? 'en' : 'zh-CN'; // 当前支持简体中文、英文
+          let url = `${prefixUrl}/index.html?schoolid=${this.schoolid}&classid=${this.idInputs.classId}&userid=${sign.UserId}&token=${sign.Token}&lng=${language}`;
+          url += location.search.replace('?', '&');
+          location.href = url;
+        }
+      }
+      // 进入课堂
+      function enterClass() {
+          
+      }
+    </script>
+  </body>
+</html>
