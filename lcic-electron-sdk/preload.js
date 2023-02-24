@@ -3,6 +3,9 @@
 
 const { ipcRenderer } = require('electron');
 
+window.joinClass = (params) => {
+  ipcRenderer.send("create-class", params);
+};
 window.joinClassBySign = (params) => {
   ipcRenderer.send("create-class", params);
 };

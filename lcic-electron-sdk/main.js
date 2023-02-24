@@ -48,7 +48,7 @@ function createLCICWindow () {
       nodeIntegration: true,
       enableRemoteModule: true,
       webSecurity: false,
-      // autoHideMenuBar: true,      
+      autoHideMenuBar: true,      
       preload: path.join(__dirname, 'preload.js'),
     }
   })
@@ -56,7 +56,7 @@ function createLCICWindow () {
   
   // 一般情况是通过加载本地客户端的登录态或者远程请求动态登录态
   // _browserWindow.loadFile('index.html');
-  _browserWindow.loadURL('https://class.qcloudclass.com/1.7.2/login.html');
+  _browserWindow.loadURL('https://class.qcloudclass.com/1.7.2/login.html?v=123');
 
   _browserWindow.setMenuBarVisibility(false)
   // Emitted when the window is closed.
@@ -83,7 +83,7 @@ function createLCICWindow () {
 electron.ipcMain.on('close-window', (event, params)=>{
   _browserWindow && _browserWindow.close();
 });
-
+ const version = '1.7.2';
 electron.ipcMain.on('create-class', (event, arg)=>{
   if (arg.sign) {
     TCIC.initialize({
@@ -94,11 +94,12 @@ electron.ipcMain.on('create-class', (event, arg)=>{
     });
   } else {
     TCIC.initialize({
-      schoolId: arg.schoolId,
-      classId: arg.classId,
-      userId: arg.userId,
+      schoolId: arg.schoolId ? arg.schoolId : arg.schoolid,
+      classId: arg.classId ? arg.classId : arg.classid,
+      userId: arg.userId ?  arg.userId : arg.userid,
       token: arg.token,
       scene: '',
+      version: version,
       env: arg.env,
       lng: arg.lng
     });
