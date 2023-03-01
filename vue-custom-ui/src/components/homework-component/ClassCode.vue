@@ -26,7 +26,7 @@ export default {
       active: false,
       role: {
         teacher: {
-          classType: ['interactive', 'live'],
+          classType: ['interactive', 'live', 'unitedrtc'],
         },
       },
       action: (event) => {
