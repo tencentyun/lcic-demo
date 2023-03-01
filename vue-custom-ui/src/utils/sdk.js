@@ -1,4 +1,6 @@
+// window.TCIC is global Function , It will be injected into the classRoom before user enter;
 const tcic = window.TCIC || {};
+
 const initEvent = () => {
   tcic.SDK.instance.promiseState(tcic.TMainState.Joined_Class, true).then(async () => {
     if (tcic.SDK.instance.getClassInfo().classSubType == tcic.TClassSubType.Live) {
@@ -7,6 +9,7 @@ const initEvent = () => {
     }
   });
 };
+
 export default {
   tcic,
   initEvent,

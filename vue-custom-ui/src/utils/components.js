@@ -11,18 +11,18 @@ const TCIC = sdk.tcic;
  * @returns {Promise<void>}
  */
 const initHelpCom = async (Vue, comName, com, immediatelyShow = true) => {
-  // 1. 注册自定义标签
+  // 1. register you custom component to vue framework (注册自定义标签)
   Vue.customElement(comName, com);
-  // 2. 注册自定义组件
+  // 2. register custom component to TCIC (注册自定义组件)
   TCIC.SDK.registerComponent(comName, com);
-  // 3. 加载自定义组件
+  // 3. use TCIC to load your component (加载自定义组件)
   if (immediatelyShow) {
     TCIC.SDK.instance.loadComponent(comName, {});
   }
 };
 export default {
   /**
-   * 初始化组件
+   * init (初始化组件)
    * @param Vue
    */
   initComponent: async (Vue) => {

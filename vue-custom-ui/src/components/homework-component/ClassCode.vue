@@ -15,7 +15,7 @@ export default {
     };
   },
   created() {
-    // 直播间菜单新增班级码按钮
+    // 课堂中菜单新增班级码按钮
     this.header = this.$TCIC.SDK.instance.getComponent('header-component').getVueInstance().$refs.header;
     this.header.addMenu({
       name: 'classcode',
