@@ -27,10 +27,10 @@ export default {
    */
   initComponent: async (Vue) => {
     if (window.Vue) {
-      const initComs = [
+      const initComponent = [
         initHelpCom(Vue, 'classcode-component', ClassCode, false),
       ];
-      await Promise.all(initComs);
+      await Promise.all(initComponent);
     }
   },
   initHelpCom,

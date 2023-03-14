@@ -16,6 +16,10 @@ export default {
   },
   created() {
     // 课堂中菜单新增班级码按钮
+
+  },
+  mounted() {
+    console.log('----------------------------load private component---->>>>>>', new Date());
     this.header = this.$TCIC.SDK.instance.getComponent('header-component').getVueInstance().$refs.header;
     this.header.addMenu({
       name: 'classcode',
@@ -33,8 +37,6 @@ export default {
         this.toggleVisible(event);
       },
     }, 0);
-  },
-  mounted() {
     this.deviceCheckComplete(this.addListenerResize);
   },
 
