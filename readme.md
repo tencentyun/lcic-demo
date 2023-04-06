@@ -23,3 +23,9 @@ tencent cloud low code interactive class room of pc(windows/mac os) client integ
 tencent cloud low code interactive class room can customized.The UI and interaction logic of business modules in the classroom can be customized based on HTML/CSS/JS
 
 [Official Integration Description](https://cloud.tencent.com/document/product/1639/81513)
+
+## Contact Us
+
+you can use [QQ](https://im.qq.com/) scan QR Code to join chat group to contact us
+
+<img src="./lcic-electron-sdk/img/qq.png" alt="qq" width="100px" height="100px" />

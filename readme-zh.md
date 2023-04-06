@@ -25,3 +25,8 @@ Tencent Cloud Low-code Interactive Classroom Demo
 - [vue-custom-ui](./vue-custom-ui/readme.md)
 课堂中业务模块UI与交互逻辑可以基于 HTML/CSS/JS 自定义展示.
 [官方文档](https://cloud.tencent.com/document/product/1639/81513)
+
+## 联系我们
+
+您可以使用QQ扫描二维码加入QQ群与我们联系
+<img src="./lcic-electron-sdk/img/qq.png" alt="qq" width="100px" height="100px" />
