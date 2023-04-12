@@ -1,0 +1,32 @@
+
+/*
+* 手机端界面头部背景和字体颜色修改为黑色
+*/
+.header-mobile-component {
+    background-color: #333;
+}
+.header-mobile-component .top-bar,
+.header-mobile-component .header__span--duration,
+.class-duration-sub-component.small-screen .class-duration-type {
+    color: #111;
+}
+/* 
+* pc/web 端功能修改
+*/
+/* 
+* 隐藏课中在线人数 hide online number
+*/
+.class-duration-num { display: none;}
+/*
+* 隐藏语言选择 
+* hide language select
+*/
+.setting-language {
+    display: none;
+}
+/* 
+* 隐藏问题反馈 hide feedback
+*/
+.class-info-tooltip .btn-wrapper button:last-child {
+    display:none;
+}
