@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js",
+    "start": "electron .",
     "builder-win": "electron-builder --win",
     "builder-mac": "electron-builder --mac"
   },
@@ -73,8 +73,9 @@
     }
   },
   "devDependencies": {
+    "@sentry/electron": "^4.3.0",
     "cos-nodejs-sdk-v5": "2.6.2",
-    "electron": "^10.4.7",
+    "electron": "^12.0.0",
     "electron-builder": "22.10.5",
     "electron-notarize": "^1.0.0",
     "extract-zip": "2.0.1",
@@ -83,11 +84,11 @@
     "request": "2.88.2"
   },
   "dependencies": {
-    "@sentry/electron": "0.17.1",
     "axios": "0.21.1",
     "electron-log": "4.3.0",
     "electron-updater": "4.3.4",
     "node-machine-id": "1.1.12",
-    "tcic-electron-sdk": "^1.7.2396"
+    "tcic-electron-sdk": "^1.7.398",
+    "trtc-electron-sdk": "^10.3.404-beta.5"
   }
 }

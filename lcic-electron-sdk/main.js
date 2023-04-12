@@ -41,11 +41,12 @@ function createLCICWindow () {
     height: 782,
     useContentSize: true,
     icon: __dirname+'/img/crdc.ico',
-    // transparent: true,
-    // frame: false,
+    transparent: true,
+    frame: false,
     hasShadow: false,
     webPreferences: {
-      nodeIntegration: true,
+      // nodeIntegration: true,
+      nodeIntegration: false,
       enableRemoteModule: true,
       webSecurity: false,
       autoHideMenuBar: true,      
@@ -56,7 +57,7 @@ function createLCICWindow () {
   
   // 一般情况是通过加载本地客户端的登录态或者远程请求动态登录态
   // _browserWindow.loadFile('index.html');
-  _browserWindow.loadURL('https://class.qcloudclass.com/1.7.2/login.html?v=123');
+  _browserWindow.loadURL('https://class.qcloudclass.com/1.7.2/login.html');
 
   _browserWindow.setMenuBarVisibility(false)
   // Emitted when the window is closed.
