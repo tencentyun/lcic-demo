@@ -1,0 +1,56 @@
+手机竖屏页面样式调整
+
+.portrait-im-component .im-component.mobile {
+    margin-top: 92px;
+}
+.video-wrap-component.small-screen {
+    width: 375px;
+    height: 86px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    height: 86px;
+    left: calc(-100% - 115px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width:none;
+}
+.video-wrap-component.small-screen .layout-side.portrait-screen {
+    display: none;
+}
+.video-wrap-component.small-screen .video-list.layout-right.portrait-screen::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.video-wrap-component.small-screen .video-list.layout-right.portrait-screen{
+    min-width: 100%;
+    width: auto;
+    margin: 0;
+    display: inline-table!important;
+    flex-flow: row;
+}
+.video-wrap-component.small-screen .video-list.portrait-screen.hidden {
+    top: 0;
+    left: 0;
+    display: flex!important;
+}
+
+.video-wrap-component.small-screen .video-list.portrait-screen .teacher-wrap {
+    padding: 0;
+    margin: 0;
+    width: 115px;
+    display: inline-block;
+    overflow: hidden;
+}
+.video-wrap-component.small-screen .video-list.layout-right.portrait-screen .student-wrap {
+    width: calc(100% - 115px);
+    height: 86px;
+    display: inline-block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+.video-wrap-component.small-screen .video-list.layout-right.portrait-screen .student-wrap student-component:not(.drag) {
+    max-width: 115px!important;
+    float: left;
+}
