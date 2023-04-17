@@ -1,0 +1,20 @@
+/* 
+* header 头部样式
+*/
+.header-component {}
+/* device pc/ipad  头部样式 */
+.header-pc-component{}
+.header-pc-component .header__left{}
+.header-pc-component .course-time{}
+.header-pc-component .header__sub-operation{}
+.header-pc-component .header__list{}
+/* mobile 手机端 头部 */
+.header-mobile-component {}
+.header-mobile-component .top-bar {}
+
+
+
+
+/*
+* footer-component 底部样式
+*/
