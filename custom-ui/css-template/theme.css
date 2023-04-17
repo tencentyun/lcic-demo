@@ -1,7 +1,12 @@
+/**
+ *
+ */
+
 /* 
 * header 头部样式
 */
 .header-component {}
+
 /* device pc/ipad  头部样式 */
 .header-pc-component{}
 .header-pc-component .header__left{}
@@ -12,9 +17,52 @@
 .header-mobile-component {}
 .header-mobile-component .top-bar {}
 
+/*
+* videowrap-component 视频组件
+*/
+/* teacher-componet 老师视频流 */
+.teacher-component{}
+.teacher-component .teacher-video{}
 
+/* im对话框 */
+.introduction-discuss-component{}
 
+/*
+* board-tools-component 白板工具
+*/
+.board-tools-component{}
+.board-tools-component-menu{}
+.board-tools-component-menu .filter-blur-bg {}
+.board-tools-component-menu ul li{}
 
 /*
 * footer-component 底部样式
 */
+.dark .footer-component .filter-blur-bg{}
+.footer-component .quick-im-component{}
+.quick-im-component .quick-im-component-tools{}
+.footer-component .foot-tool,
+.footer-component .quick-im-foot{}
+.footer-component .footer-tool-fold{}
+
+
+/*
+* dialog 
+*/
+.msg-box-component .el-dialog,
+.dark .el-dialog{}
+.msg-box-component .el-dialog .el-dialog__header{}
+.msg-box-component .el-dialog .el-dialog__body{}
+.msg-box-component .el-dialog .el-dialog__footer{}
+
+/*
+* tools-dialog
+*/
+/* roster */
+.member-list-component{}
+/* document-upload component */
+.document-component{}
+/* im-dialog*/
+.float-im-component{}
+.float-im-component .ui-box-header{}
+.float-im-component .ui-box-content{}
