@@ -25,9 +25,20 @@ function doUpdateNodeSize() {
   }
 }
 
+function enterClassRoom() {
+  // first time enter the class room update layout
+  doUpdateNodeSize();
+  // update back board  background
+  const board = TCIC.SDK.instance.getBoard();
+  board.setBackgroundColor('#fefefe');
+  // board.setBackgroundColor('rgba(ff, 00, 00, 0.5)');
+  // https://doc.qcloudtiw.com/web/official/TEduBoard.html#setBackgroundImage
+  // board.setBackgroundImage(url, modeopt);
+
+}
 // dom load
 pageReady((e) => {
   console.log('=======> Document is ready!');
-  TCIC.SDK.instance.on(TCIC.TMainEvent.After_Enter, doUpdateNodeSize);
+  TCIC.SDK.instance.on(TCIC.TMainEvent.After_Enter, enterClassRoom);
   TCIC.SDK.instance.on(TCIC.TMainEvent.App_Resized, doUpdateNodeSize);
 });
