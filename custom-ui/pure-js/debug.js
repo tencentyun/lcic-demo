@@ -28,11 +28,12 @@ function doUpdateNodeSize() {
 function enterClassRoom() {
   // first time enter the class room update layout
   doUpdateNodeSize();
-  // update back board  background
+
+  // set backboard  background color or picture
   const board = TCIC.SDK.instance.getBoard();
   board.setBackgroundColor('#fefefe');
   // board.setBackgroundColor('rgba(ff, 00, 00, 0.5)');
-  // https://doc.qcloudtiw.com/web/official/TEduBoard.html#setBackgroundImage
+  // Api document: https://doc.qcloudtiw.com/web/official/TEduBoard.html#setBackgroundImage
   // board.setBackgroundImage(url, modeopt);
 
 }

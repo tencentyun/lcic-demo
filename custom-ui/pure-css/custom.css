@@ -1,32 +1,28 @@
-
-/*
-* 手机端界面头部背景和字体颜色修改为黑色
+/* 
+* header-component 头部样式
+* Need to discriminate different device
 */
-.header-mobile-component {
-    background-color: #333;
-}
+.header-component {}
+/* device pc-client/web/ipad style 头部样式 */
+.header-pc-component{ background-color: #1c2131; }
+.header-pc-component .header__left{}
+.header-pc-component .course-time{}
+.header-pc-component .header__sub-operation{}
+.header-pc-component .header__list{}
+/* device mobile header style */
+.header-mobile-component { background-color: #333; }
 .header-mobile-component .top-bar,
 .header-mobile-component .header__span--duration,
-.class-duration-sub-component.small-screen .class-duration-type {
-    color: #111;
-}
+.class-duration-sub-component.small-screen .class-duration-type { color: #111; }
+
 /* 
-* pc/web 端功能修改
+* pc/web/mobile hava
+* some button or function no need to distinguish device
 */
-/* 
-* 隐藏课中在线人数 hide online number
-*/
+
+/*  hide online number  隐藏课中在线人数 */
 .class-duration-num { display: none;}
-/*
-* 隐藏语言选择 
-* hide language select
-*/
-.setting-language {
-    display: none;
-}
-/* 
-* 隐藏问题反馈 hide feedback
-*/
-.class-info-tooltip .btn-wrapper button:last-child {
-    display:none;
-}
+/* hide language select 隐藏语言选择 */
+.setting-language { display: none;}
+/* hide feedback 隐藏问题反馈 */
+.class-info-tooltip .btn-wrapper button:last-child { display:none; }
