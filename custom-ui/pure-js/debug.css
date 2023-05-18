@@ -1,10 +1,15 @@
 /* 
 * reset mobile page portrait style
 * 手机竖屏页面样式调整
+* 핸드폰 세로 페이지 스타일 조정
+* 携帯電話の縦画面ページスタイルの調整
  */
 
 .portrait-im-component .im-component.mobile {
     margin-top: 92px;
+}
+#app .tcic-component-container #white-board-parent{
+    z-index: 100!important;
 }
 .video-wrap-component.small-screen {
     width: 375px;

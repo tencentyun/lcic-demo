@@ -46,10 +46,10 @@ use css file to config in tencent cloud console ,update custom ui of style file 
     visit url like:
     https://class.qcloudclass.com/1.7.3/class.html?classid=xxx&userid=xx&token=xxx&sence=xxx
 
-    more detail visit: https://cloud.tencent.com/document/product/1639/79896
+more detail visit: https://cloud.tencent.com/document/product/1639/79896
 
 
 
 ## more 
 
-    more css struct like [theme.css](./theme.css)
+more css struct like [theme.css](./theme.css)
