@@ -25,7 +25,8 @@ function doUpdateNodeSize() {
   const isMobileNative = TCIC.SDK.instance.isMobileNative();
   if (isMobileDevice && !isMobileNative) {
     const isMobilePortrait = !!((window.orientation === 180 || window.orientation === 0));
-    const style = isMobilePortrait ? `width: ${document.body.clientWidth}px; left: -${document.body.clientWidth - 130}px` : '';
+    const style = isMobilePortrait ? `width: ${document.body.clientWidth}px; left: -${document.body.clientWidth - 130}px`
+      : 'width: 100%; height: 100%; position: static; overflow-x: hidden; overflow-y: auto;';
     console.log('==============> update style ', style);
     if (document.querySelector('.video-wrap-component') !== null) {
       document.querySelector('.video-wrap-component').style = style;
