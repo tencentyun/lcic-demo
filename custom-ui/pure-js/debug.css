@@ -5,12 +5,8 @@
 * 携帯電話の縦画面ページスタイルの調整
  */
 
-.portrait-im-component .im-component.mobile {
-    padding-top: 92px;
-}
-
-.video-wrap-component.small-screen {
-    width: 375px;
+ .video-wrap-component.small-screen {
+    width: 100%;
     height: 86px;
     pointer-events: none;
     position: absolute;
@@ -26,6 +22,9 @@
 }
 .video-wrap-component.small-screen .video-list.layout-right.portrait-screen::-webkit-scrollbar {
     width: 0 !important
+}
+.small-screen .layout-side.video-left .el-button {
+    background: #333;
 }
 
 .video-wrap-component.small-screen .video-list.layout-right.portrait-screen{
@@ -61,12 +60,24 @@
     float: left;
 }
 
+@media screen and (orientation: landscape) {
+    .portrait-im-component .im-component.mobile {
+        padding-top: 6px;
+    }
+    .video-wrap-component.small-screen{
+        width: 175px;
+        height: 100%;
+        left: calc(100% - 175px);
+        top: 0px;
+     }
+ } 
+
 @media screen and (orientation: portrait) {
+    .portrait-im-component .im-component.mobile {
+        padding-top: 86px;
+    }
+    
     screen-player-component{
-        z-index: 1500!important;
+        z-index: 100!important;
     }
-    #app .video-wrap-component{
-        width: 100vw;
-        left: calc(130px - 100vw);
-    }
-} 
+}

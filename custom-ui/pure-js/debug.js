@@ -31,31 +31,6 @@ function doUpdateNodeSize() {
     if (document.querySelector('.video-wrap-component') !== null) {
       document.querySelector('.video-wrap-component').style = style;
     }
-    const imEle = document.querySelector('portrait-im-component.tcic-component-container');
-    if (imEle) {
-      const observerOptions = {
-        childList: false,
-        attributes: true,
-      };
-
-      const callback = (mutationList, observer) => {
-        mutationList.forEach((mutation) => {
-          switch (mutation.type) {
-            case 'attributes':
-              console.log('mutationName:', mutation.attributeName);
-              if (mutation.attributeName === 'style') {
-                if (imEle.style.top === 'calc(30% + 45px)') {
-                  imEle.style.top = 'calc(30% + 135px)';
-                  imEle.style.height = 'calc(70% - 135px)';
-                }
-              }
-              break;
-          }
-        });
-      };
-      const observer = new MutationObserver(callback);
-      observer.observe(imEle, observerOptions);
-    }
   }
 }
 
@@ -66,12 +41,13 @@ function enterClassRoom() {
   doUpdateNodeSize();
 
   // set backboard  background color or picture
-  const board = TCIC.SDK.instance.getBoard();
-  board.setBackgroundColor('#fefefe');
+  // if (TCIC.SDK.instance.isTeacher()) {
+  // const board = TCIC.SDK.instance.getBoard();
+  // board.setBackgroundColor('#fefefe');
   // board.setBackgroundColor('rgba(ff, 00, 00, 0.5)');
   // Api document: https://doc.qcloudtiw.com/web/official/TEduBoard.html#setBackgroundImage
   // board.setBackgroundImage(url, modeopt);
-
+  // }
 }
 
 // dom load
