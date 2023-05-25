@@ -1,4 +1,4 @@
-/* 
+/*
 * Page JavaScript Events and Logic Used to Monitor Event Logic in Pages
 * 页面 javascript 事件与逻辑用于监控页面中事件逻辑
 * 페이지 javascript 이벤트와 논리는 페이지의 이벤트 논리를 감시하는 데 사용됩니다
@@ -25,12 +25,13 @@ function doUpdateNodeSize() {
   const isMobileNative = TCIC.SDK.instance.isMobileNative();
   if (isMobileDevice && !isMobileNative) {
     const isMobilePortrait = !!((window.orientation === 180 || window.orientation === 0));
-    const style = isMobilePortrait ? `width: ${document.body.clientWidth}px; left: -${document.body.clientWidth - 130}px`
-      : 'width: 100%; height: 100%; position: static; overflow-x: hidden; overflow-y: auto;';
-    console.log('==============> update style ', style);
-    if (document.querySelector('.video-wrap-component') !== null) {
-      document.querySelector('.video-wrap-component').style = style;
+    const style = isMobilePortrait ? `width: ${document.body.clientWidth}px; left: -${document.body.clientWidth - 130}px;`
+      : 'position: relative;';
+    const el = document.querySelector('.video-wrap-component');
+    if (el) {
+      el.style = style;
     }
+    console.log('==============> update style ', style);
   }
 }
 
