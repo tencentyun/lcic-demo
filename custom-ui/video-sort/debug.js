@@ -37,7 +37,7 @@ TCIC.SDK.instance.promiseState(TCIC.TMainState.Joined_Class, true).then(() => {
     if (video.isAssistantVideo) {
       return 9;
     }
-    // nickname 是异步的有可能是控字符串
+    // nickname 是异步的有可能是空字符串
     if (video.nickname.trim().indexOf('临床医生_') === 0) {
       return 7;
     } else if (video.nickname.trim().indexOf('患者') === 0) {
@@ -57,6 +57,7 @@ TCIC.SDK.instance.promiseState(TCIC.TMainState.Joined_Class, true).then(() => {
   });
 
   let timer;
+
   // 由于获取 nickname 是异步的，自定义排序函数中有根据 nickname 进行排序的逻辑，则每次有新人加入后，延时 2 秒重新排序一下
   videoWall.setVideoAddCallBack(() => {
     if (timer) {
