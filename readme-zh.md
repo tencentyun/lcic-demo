@@ -4,7 +4,6 @@ Tencent Cloud Low-code Interactive Classroom Demo
 
 【[腾讯云低代码互动课堂](https://cloud.tencent.com/document/product/1639)】是腾讯云整合音视频产品能力构建的 aPaaS 在线课堂解决方案。通过低代码互动课堂提供的 SDK 产品服务，开发者无需深度学习音视频的复杂核心逻辑，即可将低代码互动课堂 SDK 无缝嵌入到自己的业务系统中，搭建自有品牌的在线互动课堂。
 
-
 本仓库 Demo 仅用于演示低代码互动课堂功能，源码对外开放，可供您接入时参考，但是 Demo 本身未经过严格测试，若您计划将 Demo 代码用于生产环境，请确保发布前自行进行充分测试，避免发生潜在问题可能给您造成损失。
 
 ## Demo 
